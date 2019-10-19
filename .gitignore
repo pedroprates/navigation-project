@@ -1,1 +1,4 @@
 Banana.app
+.ipynb_checkpoints/
+unity-environment.log
+.pylintrc
