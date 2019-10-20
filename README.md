@@ -15,7 +15,7 @@ The task is episodic, and the goal is to achieve an accumulated reward of, at le
 This code was developed on a `conda environment` with Python 3.6. You are encouraged to use a virtual environment as well (conda, virtualenv preferably). You can install all the packages on the `requirements.txt`.
 
 To replicate our environment, you can run the following command: 
-```python
+```shell
 conda create --name <env> python=3.6 --file requirements.txt
 ```
 
