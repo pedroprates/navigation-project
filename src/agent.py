@@ -4,8 +4,8 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-from model import QNetwork
-from buffer import ReplayBuffer
+from src.model import QNetwork
+from src.buffer import ReplayBuffer
 
 BUFFER_SIZE = int(1e5)  # Replay Buffer Size
 BATCH_SIZE = 64         # Minibatch size
@@ -93,7 +93,7 @@ class Agent:
         q_targets = rewards + (gamma * q_targets_next * (1 - dones))
 
         # Get expected Q values from local model
-        q_expected = self.qnetwork_local(states).gather(1, actions)
+        q_expected = self.qnetwork_local(states).gather(1, actions.type(torch.LongTensor))
 
         loss = F.mse_loss(q_expected, q_targets)
 
@@ -115,5 +115,5 @@ class Agent:
             tau (float): interpolation parameter
         """
 
-        for target_param, local_param in zip(target_model.parametes(), local_model.parameters()):
+        for target_param, local_param in zip(target_model.parameters(), local_model.parameters()):
             target_param.data.copy_(tau*local_param.data + (1.0 - tau) * target_param.data)
