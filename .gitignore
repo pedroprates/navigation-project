@@ -3,3 +3,4 @@ Banana.app
 unity-environment.log
 .pylintrc
 .vscode/
+src/__pycache__
