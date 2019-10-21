@@ -34,3 +34,13 @@ Then you should unzip the file (you'll need to provide the *path* of this enviro
 
 You can navigate through the `Navigation.ipynb` file to explore the Unity Environment and how to run an random-action agent on this task. 
 
+## Training the Model
+
+Train the model is as easy as running the file `train_dqn.py` passing the necessary parameters (the hyperparameters). You can also check the notebook `dqn_navigation.ipynb` to a more detailed version on how the model was implemented. 
+
+### Running the model
+
+Running a trained model is as simple as calling `run_dqn.py` with the path of the trained model as a parameter. 
+
+For more information on how the **DQN** is trained, and which techniques are used, you should checkout this repository's Wiki. 
+
