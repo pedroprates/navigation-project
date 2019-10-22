@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from unityagents import UnityEnvironment
 from src.agent import Agent
+from utils.utils import unwrap_env_info
 
 def main(args):
     """ Training a Deep Q-Learning algorithm on the Unity Environment """
@@ -122,10 +123,6 @@ def parse_arguments():
                         help='The seed to input to random functions')
 
     return parser.parse_args()
-
-
-def unwrap_env_info(obj):
-    return obj.vector_observations[0], obj.rewards[0], obj.local_done[0]
 
 if __name__ == '__main__':
     print('Starting code...')
